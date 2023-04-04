@@ -1,0 +1,28 @@
+name : 'Custom Github Action'
+description : 'dfklsdf'
+inputs : 
+  num:
+    required : true
+    default : "1"
+outputs:
+  num_sqared :
+    value : ${{steps.get-square.outputs.num_squared}}
+runs:
+  using : 'composite'
+  steps : 
+    - name : "Install Python"
+      uses : actions/setup-python@v4
+      with :
+        python-version : '3.10'
+        
+    - name : Install dependencies
+      run : pip install -r requirements.txt
+      shell : bash
+    - name : Pass inputs to shell
+      run :|
+       echo ""
+     shell : bash
+   - name : fetch the number 'squre
+      id : get-square
+      run : python src/get_num_square.py
+      shell : bash
