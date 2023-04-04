@@ -21,8 +21,8 @@ runs:
     - name: Pass inputs to shell
       run: |
        echo "INPUT_NUM=${{inputs.num}}" >> $GUTHUB_ENV
-     shell: bash
-   - name: fetch the number 'square
-     id: get-square
-     run: python src/get_num_square.py
-     shell: bash
+      shell: bash
+    - name: fetch the number 'square
+      id: get-square
+      run: python src/get_num_square.py
+      shell: bash
