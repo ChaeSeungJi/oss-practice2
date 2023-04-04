@@ -5,7 +5,7 @@ if num:
   try:
     num = int(num)
   except Exception:
-  exit()
+    exit()
 else:
   num=1
 
