@@ -19,8 +19,8 @@ runs:
       run : pip install -r requirements.txt
       shell : bash
     - name : Pass inputs to shell
-      run :|
-       echo ""
+      run : |
+       echo "INPUT_NUM=${{inputs.num}}" >> $GUTHUB_ENV
      shell : bash
    - name : fetch the number 'squre
       id : get-square
