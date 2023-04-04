@@ -1,0 +1,17 @@
+name : Test ACtion
+on : [push]
+
+jobs :
+  get-num-square :
+    runs-on : ubuntu-latest
+    name : Returns the number square
+    steps:
+      - name : Checkout
+        uses : actions/checjout@v2
+      - name : Fetch num squared
+        id : get_squared
+        uses : ./
+        with :
+          num : 11
+      - name : Print the Square
+        run : ehco "${{steps.get_square.outputs.num_squared}}"
